@@ -6,6 +6,8 @@ public class MainController : MonoBehaviour {
 
     private int state = 0;
 
+    public ModelController model;
+
     public GameObject matchSettingPanel;
     public GameObject pickAPanel;
     public GameObject pickBPanel;
@@ -51,6 +53,7 @@ public class MainController : MonoBehaviour {
                 pickBPanel.SetActive(true);
                 break;
             case 3:
+                model.InsertNewMatchAndRound();
                 recordPanel.SetActive(true);
                 break;
         }

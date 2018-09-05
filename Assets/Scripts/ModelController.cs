@@ -46,6 +46,8 @@ public class ModelController : MonoBehaviour {
     public ArrayList teamPlayers;
     public ArrayList enemyPlayers;
 
+    public DatabaseManager dbmanager;
+
     public void AddNewMatch(string date, string time, string location, string matchName, string team, string enemy, int matchStyle, int ruleStyle)
     {
         this.date = date;
@@ -56,6 +58,12 @@ public class ModelController : MonoBehaviour {
         this.enemy = enemy;
         this.matchStyle = matchStyle;
         this.ruleStyle = ruleStyle;
+    }
+
+    public void InsertNewMatchAndRound()
+    {
+        dbmanager.InsertNewMatch(date, time, location, matchName, team, enemy, matchStyle, ruleStyle);
+        dbmanager.InsertNewRound();
     }
 
     public void SetNewPlayerData(string team, ArrayList players)

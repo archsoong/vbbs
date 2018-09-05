@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class MatchSetting : MonoBehaviour {
 
+    public GameObject status1;
+    public GameObject status2;
+
     public Text date;
     public Text time;
     public Text location;
@@ -15,9 +18,7 @@ public class MatchSetting : MonoBehaviour {
     public Image match5;
     public Image Rule15;
     public Image Rule25;
-
-    public Image status;
-
+    
     private int matchStyle = 0;
     private int ruleStyle = 0;
 
@@ -26,6 +27,8 @@ public class MatchSetting : MonoBehaviour {
 
     void Start()
     {
+        status1.SetActive(false);
+        status2.SetActive(false);
         DateTime today = DateTime.Now;
         date.text = today.Date.ToShortDateString();
         time.text = today.TimeOfDay.Hours + " : " + today.TimeOfDay.Minutes;
@@ -74,15 +77,14 @@ public class MatchSetting : MonoBehaviour {
 
         if (s_date == "" || s_time == "" || s_location == "" || s_match == "" || s_team == "" || s_enemy == "")
         {
-            status.sprite = Resources.Load("SettingAlert-01", typeof(Sprite)) as Sprite;
-            Color c = new Color(0, 0, 0);
-            c.a = 255;
-            status.color = c;
+            status2.SetActive(false);
+            status1.SetActive(true);
             return;
         }
         else if (matchStyle == 0 || ruleStyle == 0)
         {
-            status.sprite = Resources.Load("SettingAlert-02", typeof(Sprite)) as Sprite;
+            status1.SetActive(false);
+            status2.SetActive(true);
             return;
         }
 

@@ -15,14 +15,29 @@ public class PlayerSelectPanel : MonoBehaviour
 
     public void PickPlayer(int playerNo)
     {
+        if (PlayerAlreadyAdded(playerNo + 1))
+            return;
+
         Image img = arrayPA[playerNo].GetComponent<Image>();
 
         if (playerArray.Count < 8)
         {
             img.sprite = Resources.Load("btn_playerSelect-01", typeof(Sprite)) as Sprite;
+
             playerArray.Add(playerNo + 1);
             arrayCA[playerArray.Count-1].GetComponentInChildren<Text>().text = (playerNo + 1).ToString();
         }
+    }
+
+    public bool PlayerAlreadyAdded(int playerNo)
+    {
+        foreach (int p in playerArray)
+        {
+            if (p == playerNo) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void ResetPlayerSelection(string team)

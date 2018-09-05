@@ -32,7 +32,7 @@ public class CalcSystem : MonoBehaviour {
 
     public void CalculateData()
     {
-        ArrayList balls = dbm.ReadDBDataFromMatch(1);
+        ArrayList balls = dbm.ReadDBDataFromRound();
 
         team = new Team();
         enemy = new Team();
