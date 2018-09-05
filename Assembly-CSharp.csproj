@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{32F8B05C-1E6A-126B-7131-813F11D235D7}</ProjectGuid>
+    <ProjectGuid>{82AFF229-3C04-8816-E606-39FDEE36A80D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -85,16 +85,16 @@
     <Compile Include="Assets\Scripts\UI\ScoreTable.cs" />
     <None Include="Assets\Resources\test.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -295,31 +295,31 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/Mono.Data.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/Mono.Data.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.SqliteClient">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/System.Configuration.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/System.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System.Data">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/System.Data.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.EnterpriseServices">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/System.EnterpriseServices.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/System.EnterpriseServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Security">
-      <HintPath>C:/Users/Arch/Downloads/vbbs-master/Assets/Plugins/System.Security.dll</HintPath>
+      <HintPath>C:/Users/arch/vbbs/Assets/Plugins/System.Security.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Arch/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/arch/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Arch/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/arch/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
