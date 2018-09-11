@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,12 +27,12 @@ public class CalcSystem : MonoBehaviour {
 
     void Start()
     {
-        CalculateData(); // Testing use
+        // CalculateData(); // Testing use
     }
 
-    public void CalculateData()
+    public void CalculateData(int roundID)
     {
-        ArrayList balls = dbm.ReadDBDataFromRound();
+        ArrayList balls = dbm.ReadDBDataFromRound(roundID);
 
         team = new Team();
         enemy = new Team();
@@ -74,7 +74,7 @@ public class CalcSystem : MonoBehaviour {
         enemy_score_tbl.GenerateTeamRecord();       // Score Table
         enemyScore.InitPieChart(enemy, 4);          // Pie for Score
         enemyFail.InitPieChart(enemy, 6);           // Pie for Fail
-        enemyPieSideBoard.SetupPanel(team);
+        enemyPieSideBoard.SetupPanel(enemy);
 
     }
 

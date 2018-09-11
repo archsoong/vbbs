@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 
 public class PanelBottomUp : MonoBehaviour {
+
     public GameObject[] arrayReason;
     public ModelController model;
 
@@ -118,17 +116,4 @@ public class PanelBottomUp : MonoBehaviour {
         Image img13 = arrayReason[13].GetComponent<Image>();
         img13.sprite = Resources.Load("btn_ErrorLose-01", typeof(Sprite)) as Sprite;
     }
-
-
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

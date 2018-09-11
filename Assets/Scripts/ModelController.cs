@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class ModelController : MonoBehaviour {
 
@@ -19,15 +20,14 @@ public class ModelController : MonoBehaviour {
     public int enemyScore;    
 
     // Ball Data
-    public int deltaTime = 0;
     public float start_X = 0;
     public float start_Y = 0;
     public float end_X = 0;
     public float end_Y = 0;
-    public int attacker;
+    public int attacker = 0;
     public int team_player = 0;
     public int enemy_player = 0;
-    public int skill;
+    public int skill = -1;
     public int good = 0;
     public int score = 0;
     public int score_reason;
@@ -48,6 +48,22 @@ public class ModelController : MonoBehaviour {
 
     public DatabaseManager dbmanager;
 
+    private void Start()
+    {
+        for (int i = 0; i < arrayPanel.Length; i++)
+        {
+            arrayPanel[i].SetActive(false);
+        }
+    }
+
+    public void resetPanelBottomUp()
+    {
+        for (int i = 0; i < arrayPanel.Length; i++)
+        {
+            arrayPanel[i].SetActive(false);
+        }
+    }
+
     public void AddNewMatch(string date, string time, string location, string matchName, string team, string enemy, int matchStyle, int ruleStyle)
     {
         this.date = date;
@@ -64,6 +80,13 @@ public class ModelController : MonoBehaviour {
     {
         dbmanager.InsertNewMatch(date, time, location, matchName, team, enemy, matchStyle, ruleStyle);
         dbmanager.InsertNewRound();
+
+        Debug.Log("Insert new match and round");
+    }
+
+    public void EndRound()
+    {
+        dbmanager.SetRoundScore(teamScore,enemyScore);
     }
 
     public void SetNewPlayerData(string team, ArrayList players)
@@ -78,10 +101,18 @@ public class ModelController : MonoBehaviour {
         }
     }
 
+    public void Undo()
+    {
+        dbmanager.RemoveLastBall();
+    }
+
+
     public string encode()
     {
         string values = "";
-        values = values + time + ",";
+        DateTime today = DateTime.Now;
+        string deltaTime = "'" + today.TimeOfDay.Hours + ":" + today.TimeOfDay.Minutes + ":" + today.TimeOfDay.Seconds + "'";
+        values = values + deltaTime + ",";
         values = values + start_X + ",";
         values = values + start_Y + ",";
         values = values + end_X + ",";
@@ -102,7 +133,6 @@ public class ModelController : MonoBehaviour {
         values = values + enemy_switch + ",";
         values = values + enemy_position + ",";
 
-
         Debug.Log(values);
         return values;
     }
@@ -110,8 +140,7 @@ public class ModelController : MonoBehaviour {
 	public void updatePanel () {
         for (int i = 0; i < arrayPanel.Length; i++ )
         {
-            GameObject p = (GameObject)arrayPanel[i];
-            p.SetActive(false);
+            arrayPanel[i].SetActive(false);
         }
         if (attacker == 1)
         {
@@ -124,6 +153,7 @@ public class ModelController : MonoBehaviour {
     }
 
     void strike() {
+        Debug.Log("score:" + score + " attacker:" + attacker + "skill:"+skill);
         switch (skill)
         {
             case 0:
@@ -131,9 +161,9 @@ public class ModelController : MonoBehaviour {
                 {
                     ((GameObject)arrayPanel[0]).SetActive(true);
                 }
-                else
+                else if (score == 2)
                 {
-                score_reason = 8;
+                    score_reason = 8;
                 }
                 break;
             case 1:
@@ -141,7 +171,7 @@ public class ModelController : MonoBehaviour {
                 {
                     ((GameObject)arrayPanel[2]).SetActive(true);
                 }
-                else
+                else if (score == 2)
                 {
                     ((GameObject)arrayPanel[3]).SetActive(true);
                 }
@@ -149,9 +179,9 @@ public class ModelController : MonoBehaviour {
             case 2:
                 if (score == 1)
                 {
-                score_reason = 6;
+                    score_reason = 6;
                 }
-                else
+                else if (score == 2)
                 {
                 score_reason = 14;
                 }
@@ -162,12 +192,13 @@ public class ModelController : MonoBehaviour {
 
     void defend()
     {
+        Debug.Log("score:" + score + " attacker:" + attacker);
         switch (skill)
         {
             case 0:
                 if (score == 1)
                 {
-                score_reason = 5;
+                    score_reason = 5;
                 }
                 else if(score == 2)
                 {
@@ -179,7 +210,7 @@ public class ModelController : MonoBehaviour {
                 {
                     ((GameObject)arrayPanel[4]).SetActive(true);
                 }
-                else
+                else if (score == 2)
                 {
                     ((GameObject)arrayPanel[5]).SetActive(true);
                 }
@@ -187,11 +218,11 @@ public class ModelController : MonoBehaviour {
             case 2:
                 if (score == 1)
                 {
-                score_reason = 6;
+                    score_reason = 6;
                 }
-                else
+                else if (score == 2)
                 {
-                score_reason = 14;
+                    score_reason = 14;
                 }
                 break;
         }

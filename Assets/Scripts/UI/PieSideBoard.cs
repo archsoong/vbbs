@@ -1,4 +1,4 @@
-﻿using UnityEngine.UI;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PieSideBoard : MonoBehaviour
@@ -15,10 +15,10 @@ public class PieSideBoard : MonoBehaviour
 
     private void SetupScorePanel(Team team)
     {
-        Transform serve = scorePanel.transform.GetChild(1);
-        Transform attack = scorePanel.transform.GetChild(2);
-        Transform block = scorePanel.transform.GetChild(3);
-        Transform fail = scorePanel.transform.GetChild(4);
+        Transform serve = scorePanel.transform.GetChild(0);
+        Transform attack = scorePanel.transform.GetChild(1);
+        Transform block = scorePanel.transform.GetChild(2);
+        Transform fail = scorePanel.transform.GetChild(3);
 
         Text[] serves = serve.GetComponentsInChildren<Text>();
         Text[] attacks = attack.GetComponentsInChildren<Text>();
@@ -40,12 +40,12 @@ public class PieSideBoard : MonoBehaviour
 
     private void SetupFailPanel(Team team)
     {
-        Transform serve = failPanel.transform.GetChild(1);
-        Transform attack = failPanel.transform.GetChild(2);
-        Transform block = failPanel.transform.GetChild(3);
-        Transform defend = failPanel.transform.GetChild(4);
-        Transform duel = failPanel.transform.GetChild(5);
-        Transform fail = failPanel.transform.GetChild(6);
+        Transform serve = failPanel.transform.GetChild(0);
+        Transform attack = failPanel.transform.GetChild(1);
+        Transform block = failPanel.transform.GetChild(2);
+        Transform defend = failPanel.transform.GetChild(3);
+        Transform duel = failPanel.transform.GetChild(4);
+        Transform fail = failPanel.transform.GetChild(5);
 
         Text[] serves = serve.GetComponentsInChildren<Text>();
         Text[] attacks = attack.GetComponentsInChildren<Text>();

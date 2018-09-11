@@ -7,32 +7,38 @@ using System;
 
 public class PanelCenter : MonoBehaviour {
 
-    private int state = 0;
-
-    public GameObject matchSettingPanel;
-    public GameObject PickAPanel;
-    public GameObject PickBPanel;
-
     public GameObject[] arrayA;
     public GameObject[] arrayB;
     public GameObject[] arraySkill;
 
     public ModelController model;
 
-    private void Start()
+    public void SetupPlayerNumber()
     {
-        matchSettingPanel.SetActive(false);
+        clearPlayerNumber();
+        for (int i = 0; i < model.teamPlayers.Count; i++)
+        {
+            arrayA[i].SetActive(true);
+            arrayA[i].GetComponentInChildren<Text>().text = model.teamPlayers[i].ToString();
+        }
+        
+        for (int i = 0; i < model.enemyPlayers.Count; i++)
+        {
+            arrayB[i].SetActive(true);
+            arrayB[i].GetComponentInChildren<Text>().text = model.enemyPlayers[i].ToString();
+        }
     }
 
-    public void NextState()
+    private void clearPlayerNumber()
     {
-        state += 1;
-
-        switch (state)
+        foreach (GameObject p in arrayA)
         {
-            case 1: break;
-            case 2: break;
-            case 3: break;
+            p.SetActive(false);
+        }
+
+        foreach (GameObject p in arrayB)
+        {
+            p.SetActive(false);
         }
     }
 

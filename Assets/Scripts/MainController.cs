@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainController : MonoBehaviour {
@@ -21,6 +19,11 @@ public class MainController : MonoBehaviour {
         pickAPanel.SetActive(false);
         pickBPanel.SetActive(false);
         recordPanel.SetActive(false);
+    }
+
+    public int getState()
+    {
+        return state;
     }
 
     public void NextState()
@@ -54,7 +57,13 @@ public class MainController : MonoBehaviour {
                 break;
             case 3:
                 model.InsertNewMatchAndRound();
+                recordPanel.GetComponent<RecordPanel>().pc.SetupPlayerNumber();
                 recordPanel.SetActive(true);
+                break;
+            case 4:
+                model.EndRound();
+                PlayerPrefs.SetInt("round", model.dbmanager.round_id);
+                GetComponent<SceneControl>().OpenMatchStatistic();
                 break;
         }
     }
